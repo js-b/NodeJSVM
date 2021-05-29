@@ -9,17 +9,29 @@ const path = require('path')
 //     console.log('Папка создана');
 // })
 
+// const filePath = path.join(__dirname,'test','text.txt')
+
+// fs.writeFile(filePath, ' Hello NodeJs', err => {
+//     if(err){
+//         throw err
+//     }
+//     console.log('file created');
+//     fs.appendFile(filePath, '\n Hello NodeJs 2', err => {
+//         if(err){
+//             throw err
+//         }
+//         console.log('file again created');
+//     })
+// })
+
 const filePath = path.join(__dirname,'test','text.txt')
 
-fs.writeFile(filePath, ' Hello NodeJs', err => {
+fs.readFile(filePath,'utf-8', (err,content)=>{
     if(err){
         throw err
     }
-    console.log('file created');
-    fs.appendFile(filePath, '\n Hello NodeJs 2', err => {
-        if(err){
-            throw err
-        }
-        console.log('file again created');
-    })
+    // const data = Buffer.from(content)
+    // console.log('Content: ', data.toString());
+
+    console.log(content);
 })
